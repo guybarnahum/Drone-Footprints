@@ -17,6 +17,39 @@ output includes a orthorectified GeoTiff image file, accompanied by a GeoJSON fi
 
 ----------------------------------------------------------------------------------------------------------------
 
+## Docker Installation and Usage
+
+```
+docker build . -t drone-georeference
+```
+
+And then
+
+```
+docker run --rm -v /Path/To/missions:/app/missions -it drone-georeference bash
+```
+
+In the mission folder there are images with telemetry data kept in extif.
+
+To run within the container:
+
+```
+root@d560e3a6d361:/app# python Drone_Footprints.py -i missions/mesa_5_mar_2/images/ -o missions/mesa_5_mar_2/output/
+
+  is not a valid file.  Switching to Default elevation model
+2024-05-27 07:08:26.848 | INFO     | __main__:main:171 - User arguments - <br> &emsp;output_directory: missions/mesa_5_mar_2/output/<br>&emsp;input_directory: missions/mesa_5_mar_2/images/<br>&emsp;DSMPATH: None
+2024-05-27 07:08:26.849 | INFO     | __main__:main:175 - Initializing the Processing of Drone Footprints
+2024-05-27 07:08:26.853 | INFO     | __main__:main:188 - Found 33 image files in the specified directory.
+2024-05-27 07:08:27.475 | INFO     | __main__:main:194 - Metadata Gathered for 33 image files.
+2024-05-27 07:08:27.484 | INFO     | meta_data:process_metadata:41 - Processing images for GeoTiff and GeoJSON creation.                                                                                                        
+2024-05-27 07:09:50.318 | SUCCESS  | __main__:main:225 - Process Complete. 33 standard GeoTIFFs and a GeoJSON file were created.                                                                                                
+                          
+root@d560e3a6d361:/app# 
+
+```
+
+The results can be viewed in the output folder.
+
 ## Installation
 
 ### GDAL requirement

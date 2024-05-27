@@ -27,3 +27,5 @@ src/Bbox_calculations.py
 /src/drone_sensors.numbers
 src/drone_sensors.numbers
 /src/Utils/lensfun_proc.py
+missions
+.DS_Store
