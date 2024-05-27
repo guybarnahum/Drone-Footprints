@@ -29,7 +29,8 @@ And then
 docker run --rm -v /Path/To/missions:/app/missions -it drone-georeference bash
 ```
 
-In the mission folder there are images with telemetry data kept in extif.
+In the mission folder there are images with telemetry data kept in extif. Mission sample data for download is below.
+i.e. - <a href="https://drive.google.com/uc?export=download&id=15WzT_V9unsGuAp_I2M4PaBOkFC2unkq_" download>dataset 1</a>
 
 To run within the container:
 
